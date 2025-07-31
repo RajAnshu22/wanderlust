@@ -1,0 +1,118 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+    /* Custom styles for a more polished look */
+    .edit-form-container {
+        max-width: 720px;
+        margin: auto;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #484848;
+    }
+
+    .form-control, .form-select {
+        border-radius: 8px;
+        border: 1px solid #b0b0b0;
+        padding: 0.75rem 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #ff5a5f;
+        box-shadow: 0 0 0 0.25rem rgba(255, 90, 95, 0.25);
+    }
+
+    .original-image-preview {
+        border-radius: 12px;
+        overflow: hidden;
+        max-width: 300px;
+        border: 1px solid #ddd;
+    }
+
+    .original-image-preview img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .btn-save {
+        background-color: #ff5a5f;
+        border-color: #ff5a5f;
+        color: white;
+        font-weight: bold;
+        padding: 0.75rem;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+    }
+
+    .btn-save:hover {
+        background-color: #e02f35;
+        border-color: #e02f35;
+        color: white;
+    }
+
+</style>
+
+<div class="container my-5 edit-form-container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Update Your Listing</h2>
+            <p class="text-muted">Make any changes you need and save your listing.</p>
+
+            <hr class="my-4">
+
+            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                
+                <div class="mb-4">
+                    <label for="title" class="form-label">Listing Title</label>
+                    <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required placeholder="e.g. Cozy Beachfront Cottage">
+                    <div class="valid-feedback">Looks great!</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" required rows="4" placeholder="Tell guests about your space"><%= listing.description %></textarea>
+                    <div class="invalid-feedback">Please provide a compelling description.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Current Image</label>
+                    <div class="original-image-preview">
+                        <img src="<%= originalImageUrl%>" alt="Original Listing Image">
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="image" class="form-label">Upload a New Photo</label>
+                    <p class="text-muted small mt-0">To replace the current one, choose a new file below.</p>
+                    <input name="listing[image]" type="file" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="mb-4 col-md-6">
+                        <label for="price" class="form-label">Price per night</label>
+                        <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required placeholder="e.g. 5000">
+                        <div class="invalid-feedback">A valid price is required.</div>
+                    </div>
+
+                    <div class="mb-4 col-md-6">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required placeholder="e.g. India">
+                        <div class="invalid-feedback">Please enter a country.</div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required placeholder="e.g. Goa, India">
+                    <div class="invalid-feedback">Location should be valid.</div>
+                </div>
+                
+                <hr class="my-4">
+
+                <button class="btn btn-save w-100 mt-3">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
