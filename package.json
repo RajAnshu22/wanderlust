@@ -5,13 +5,16 @@
     "node": "22.16.0"
 
   },
-  
-  "overrides": {
-    "multer-storage-cloudinary": {
-      "cloudinary": "$cloudinary"
-    }
-  },
 
+  "overrides": {
+
+    "multer-storage-cloudinary": {
+
+      "cloudinary": "$cloudinary"
+
+    }
+
+  },
 
   "name": "majorproject",
 
@@ -62,6 +65,8 @@
     "mongoose": "^8.16.1",
 
     "multer": "^2.0.2",
+
+    "multer-storage-cloudinary": "^4.0.0",
 
     "passport": "^0.7.0",
 
