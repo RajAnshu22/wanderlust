@@ -1,4 +1,4 @@
-<footer>
+<!-- <footer>
     <div class="f-info">
         <div class="f-info-socials">
             <i class="fa-brands fa-square-facebook"></i>
@@ -13,4 +13,303 @@
         </div>
 
     </div>
-</footer>
+</footer> -->
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Social Footer</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .demo-content {
+            text-align: center;
+            color: #666;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            padding: 2rem 0;
+            border-top: 1px solid #dee2e6;
+            margin-top: auto;
+
+        }
+
+      
+
+        .f-info-socials {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .social-link i {
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Facebook styling */
+        .facebook {
+            background: rgba(24, 119, 242, 0.1);
+            color: #1877f2;
+        }
+
+        .facebook::before {
+            background: linear-gradient(135deg, #1877f2, #42a5f5);
+        }
+
+        .facebook:hover::before {
+            opacity: 1;
+        }
+
+        .facebook:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .facebook:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+        }
+
+        /* Instagram styling */
+        .instagram {
+            background: rgba(225, 48, 108, 0.1);
+            color: #e1306c;
+        }
+
+        .instagram::before {
+            background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+        }
+
+        .instagram:hover::before {
+            opacity: 1;
+        }
+
+        .instagram:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+        }
+
+        /* LinkedIn styling */
+        .linkedin {
+            background: rgba(0, 119, 181, 0.1);
+            color: #0077b5;
+        }
+
+        .linkedin::before {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .linkedin:hover::before {
+            opacity: 1;
+        }
+
+        .linkedin:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .linkedin:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+        }
+
+
+
+
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .f-info-socials {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+            }
+
+            .social-link i {
+                font-size: 1.5rem;
+            }
+
+
+
+
+        }
+
+        @media (max-width: 480px) {
+            .f-info {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-link i {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Tooltip styles */
+        .social-link {
+            position: relative;
+        }
+
+        .social-link::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 70%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .social-link:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <footer>
+        <div class="f-info">
+            <div class="f-info-socials">
+                <a href="https://www.facebook.com" class="social-link facebook" target="_blank"
+                    rel="noopener noreferrer" data-tooltip="Follow us on Facebook">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+
+                <a href="https://www.instagram.com/_mr._phantom_/" class="social-link instagram" target="_blank"
+                    rel="noopener noreferrer" data-tooltip="Follow us on Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/anshu-raj-9a1b2225b/" class="social-link linkedin" target="_blank"
+                    rel="noopener noreferrer" data-tooltip="Connect on LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <div class="f-info-brand">&copy; Wanderlust Private Limited
+                <div class="tag-footer">
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </footer>
+
+    <script>
+        // Optional: Add click tracking for analytics
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const platform = this.classList[1]; // Gets 'facebook', 'instagram', or 'linkedin'
+                console.log(`User clicked ${platform} social link`);
+
+                // You can add analytics tracking here
+                // gtag('event', 'social_click', { platform: platform });
+            });
+        });
+
+        // Add smooth hover effects
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+
+            link.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
