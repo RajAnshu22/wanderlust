@@ -20,7 +20,7 @@ A full-stack property rental platform built with Node.js and MongoDB, inspired b
 
 **Frontend:**
 - EJS Templating
-- HTML, CSS, Bootstrap 5
+- HTML, CSS, Bootstrap
 
 **Backend:**
 - Node.js, Express.js
